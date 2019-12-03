@@ -9,7 +9,7 @@ const TestDoc = require('./models/demo.js');
 const app = express();
 
 mongoose.Promise = global.Promise;
-const mongoURL = 'mongodb+srv://royal:05L5qIgesWaXdyE6@mongo-free-cluster-0-8aqve.gcp.mongodb.net/test?retryWrites=true';
+const mongoURL = process.env.MONGO_URL;
 mongoose.connect(mongoURL, { useNewUrlParser: true }, (err) => {
   if (err) {
     console.log(`ERROR connecting to: ${mongoURL}, ${err}`);
